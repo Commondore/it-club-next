@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const robotoSans = Roboto({
+  variable: "--roboto-sans",
+  subsets: ["latin", "cyrillic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const robotoMonoSans = Roboto_Mono({
+  variable: "--roboto-mono",
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
@@ -25,8 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${robotoSans.variable} ${robotoMonoSans.variable} antialiased`}
+        cz-shortcut-listen="true"
       >
+        <Navbar />
         {children}
       </body>
     </html>
