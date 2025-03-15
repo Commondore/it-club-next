@@ -16,7 +16,7 @@ export const Navbar = () => {
           width={100}
           height={50}
           alt="Next js"
-          style={{ width: "auto", height: "auto" }}
+          style={{ width: 100, height: 50 }}
         />
       </div>
 
